@@ -325,14 +325,16 @@ void OMW::Engine::go()
         plugCfg.insert(0, cfgDir);
     }
 
-    mOgre.configure(!isFile(ogreCfg.c_str()), cfgUserDir, plugCfg, false);
+    mOgre.configure(false, cfgUserDir, plugCfg, false);
 
     addResourcesDirectory (mDataDir / "Meshes");
     addResourcesDirectory (mDataDir / "Textures");
 
     // This has to be added BEFORE MyGUI is initialized, as it needs
     // to find core.xml here.
+    addResourcesDirectory(mResDir);
     addResourcesDirectory(mResDir / "mygui");
+    addResourcesDirectory(mResDir / "water");
 
     // Create the window
     mOgre.createWindow("OpenMW");

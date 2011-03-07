@@ -42,11 +42,13 @@ MWScene::MWScene(OEngine::Render::OgreRenderer &_rend)
   mRaySceneQuery = rend.getScene()->createRayQuery(Ray());
 
   mPlayer = new MWRender::Player (getCamera());
+  mWater = new MWRender::Water(getCamera());
 }
 
 MWScene::~MWScene()
 {
     delete mPlayer;
+    delete mWater;
 }
 
 std::pair<std::string, float> MWScene::getFacedHandle (MWWorld::World& world)

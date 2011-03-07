@@ -3,6 +3,8 @@
 
 #include <utility>
 #include <openengine/ogre/renderer.hpp>
+#include "water.hpp"
+
 
 namespace Ogre
 {
@@ -21,6 +23,7 @@ namespace MWWorld
 namespace MWRender
 {
     class Player;
+    class Water;
 
     /// \brief 3D-scene (rendering and physics)
 
@@ -35,6 +38,7 @@ namespace MWRender
         Ogre::RaySceneQuery *mRaySceneQuery;
 
         MWRender::Player *mPlayer;
+	MWRender::Water *mWater;
 
     public:
 
@@ -42,12 +46,13 @@ namespace MWRender
 
         ~MWScene();
 
-        Ogre::Camera *getCamera() { return rend.getCamera(); }
-        Ogre::SceneNode *getRoot() { return mwRoot; }
-        Ogre::SceneManager *getMgr() { return rend.getScene(); }
-        Ogre::Viewport *getViewport() { return rend.getViewport(); }
-        Ogre::RaySceneQuery *getRaySceneQuery() { return mRaySceneQuery; }
-        MWRender::Player *getPlayer() { return mPlayer; }
+      Ogre::Camera *getCamera() { return rend.getCamera(); }
+      Ogre::SceneNode *getRoot() { return mwRoot; }
+      Ogre::SceneManager *getMgr() { return rend.getScene(); }
+      Ogre::Viewport *getViewport() { return rend.getViewport(); }
+      Ogre::RaySceneQuery *getRaySceneQuery() { return mRaySceneQuery; }
+      MWRender::Player *getPlayer() { return mPlayer; }
+      MWRender::Water *getWater() {return mWater;}
 
         /// Gets the handle of the object the player is looking at
         /// pair<name, distance>

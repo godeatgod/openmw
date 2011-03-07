@@ -765,7 +765,8 @@ namespace MWWorld
 
         if (ptr==mPlayer->getPlayer())
         {
-            if (mCurrentCell)
+	  mScene.getWater()->checkUnderwater();
+	  if (mCurrentCell)
             {
                 if (!(mCurrentCell->cell->data.flags & ESM::Cell::Interior))
                 {

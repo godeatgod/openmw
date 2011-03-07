@@ -241,6 +241,7 @@ include_directories("."
 link_directories(${Boost_LIBRARY_DIRS} ${OGRE_LIB_DIR})
 
 add_subdirectory( extern/caelum )
+add_subdirectory( extern/resources )
 add_subdirectory( extern/mygui_3.0.1 )
 
 # Make sure that certain libraries are used as static libraries

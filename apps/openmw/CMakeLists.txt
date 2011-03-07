@@ -17,6 +17,7 @@ set(GAMEREND
     mwrender/exterior.cpp
     mwrender/sky.cpp
     mwrender/player.cpp
+    mwrender/water.cpp
     )
 set(GAMEREND_HEADER
     mwrender/cell.hpp
@@ -26,6 +27,7 @@ set(GAMEREND_HEADER
     mwrender/exterior.hpp
     mwrender/sky.hpp
     mwrender/player.hpp
+    mwrender/water.hpp
     )
 source_group(apps\\openmw\\mwrender FILES ${GAMEREND} ${GAMEREND_HEADER})
 
